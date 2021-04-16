@@ -37,6 +37,13 @@ Vagrant.configure("2") do |config|
   
 
  box.vm.provision "shell", inline: <<-SHELL
+     #2
+	sudo apt-get update
+    	apt-get install -y git-all
+    	sudo apt-get install docker-engine -y
+    	sudo service docker start
+    	sudo docker run hello-world
+
      #3
         mkdir -p ~root/.ssh
         cp ~vagrant/.ssh/auth* ~root/.ssh
